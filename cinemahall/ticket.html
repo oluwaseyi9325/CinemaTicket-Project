@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/boostrap/css/bootstrap.min.css">
+</head>
+<body style="background-color: lightgray;">
+    <div class="container  mt-5 " >
+      <div class="container pt-4 pb-4 bg-secondary" style="width: 40%; border: 5px solid grey;border-radius: 30px;">
+          <div class="container text-center pb-3" style="border-bottom: 5px solid white;">
+            <input type="text" placeholder="Ticket ID" class="text-center " style="font-size: 30px; border-radius: 10px; border: none;" id="ticketIdEnter">
+            <button class="btn btn-info mt-2" onclick="loadTicketDetails()">Load</button>
+          </div>
+          <div id="ticketDetails">
+           
+          </div>
+      </div>
+    </div>
+
+    <script>
+        const loadTicketDetails=()=>{
+            let getbookTokens= JSON.parse(localStorage.getItem('TokensFolders'))
+            let arrFilterTokens=getbookTokens.filter(function (TokensDetails) {
+                if (TokensDetails.id==ticketIdEnter.value) {
+                    return true;
+                }
+            })
+           let getbooTicket = JSON.parse(localStorage.getItem('ticketFolders'));
+           let arrFilterBook= getbooTicket.filter(function (ticDetails) {
+               if (ticDetails.id==ticketIdEnter.value) {
+                   return true;
+               }
+           });
+           console.log(arrFilterBook);
+
+           ticketDetails.innerHTML=`
+
+           <div  class="container pt-4 text-white" style="font-weight:400px; font-size: 15px; border-left:10px solid lightblue; border-right: 10px solid lightgreen; border-bottom: 10px solid lightcoral;">
+                <ul>
+                    <li class="">Ticket Id:- ${arrFilterBook[0].id}</li>
+                    <li class="mt-3">Email address:- ${arrFilterBook[0].email}</li>
+                    <li class="pt-3">Tokens:- ${arrFilterTokens[0].tok}</li>
+                    <li class="pt-3">Time of Bookings:- ${arrFilterBook[0].time}am</li>
+                    <li class="pt-3">Date:- ${arrFilterBook[0].date}</li>
+                    <li class="pt-3">Total Sit booked:- ${arrFilterTokens[0].tyepeone}</li>
+                </ul>
+               
+           </div>
+           <div class="text-center mt-3">
+             <button onclick="printDetail()" class="btn btn-success btn-lg">Print</button>
+         </div>
+
+           `;
+        }
+
+
+
+        const printDetail=()=>{
+            window.print();
+        }
+    </script>
+    <script src="/boostrap/jquery-3.5.1.min.js"></script>
+    <script src="/boostrap/js/bootstrap.min.js"></script>
+</body>
+</html>
