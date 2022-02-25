@@ -69,6 +69,7 @@ const checkBook = () => {
   if (confirm('Are you done with your bookings ?')) {
     bookModal.style.display='block';
   notification_message.style.display = "none";
+
   }
 };
 const closeBtnBook=()=>{
@@ -269,3 +270,7 @@ const bookedSpaceBtn=()=>{
   let tokensBox = typeTokens.value;
   alert(tokensBox);
 }
+const closeTokens=()=>{
+  // bookModal.style.display='block';
+  notification_message.style.display = "block";
+  chat_sec.style.display='none';}

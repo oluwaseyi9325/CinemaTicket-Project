@@ -19,7 +19,7 @@
 </head>
 <body  id="cinemaBackground" >  
 
-     <div id="entering" class="text-center text-white container  bg-secondary pt-3 pb-3 animate__animated animate__zoomIn  animate__slower-5000s animate__repeat-1"  style="margin-top: 40px !important; width: 500px; border: 10px solid grey; border-radius: 20px 60px 20px 60px; display: none;">
+     <div id="entering" class="text-center text-white container  bg-secondary pt-3 pb-3 animate__animated animate__zoomIn  animate__slower-5000s animate__repeat-1"  style="margin-top: 40px !important; width: 500px; border: 10px solid grey; border-radius: 20px 60px 20px 60px;">
      <div class="text-center container mt-3 " >
         <div class="h4 shadow-lg shadow-danger" style="font-family:monospace">
          <i> WELCOME TO <span id="cinemaName">SEYI-CINEMA</span> HALL</i>
@@ -62,7 +62,7 @@
                     </div>
             </div>
 
-    <div class="text-center text-white mt-3"  id="roomHall" style="display: non;">
+    <div class="text-center text-white mt-3"  id="roomHall" style="display: none;">
 
         <div>
             <h4 ><span class="bg-danger p-3" style="border-radius: 10px;">"<span id="cinema_Name">SEYI</span>-CINEMA HALL"</span></h4>
@@ -93,6 +93,9 @@
                    <div style="border: 20px solid grey; border-radius: 10px; background-color: #d3d3d3; border-left: 15px solid grey; border-right: 15px solid grey;" >
                        <div class="bg-secondary">
                         <h4>Chat Box</h4>
+                       </div>
+                       <div class="pt-2 pb-2">
+                           <button class="btn btn-warning" onclick="closeTokens()">Close</button>
                        </div>
 
                        <div>
